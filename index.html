@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Giảng Tương Tác: Chiến Lược IELTS Speaking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .lesson-container {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 20px;
+        }
+        .slide-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .slide-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+        .interactive-section {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 1.5rem;
+            line-height: 1.8;
+        }
+        .option-label {
+            display: block;
+            background-color: #edf2f7;
+            padding: 0.8rem 1.25rem;
+            margin-bottom: 0.75rem;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            font-size: 1rem;
+            color: #4a5568;
+            border: 1px solid #e2e8f0;
+        }
+        .option-label:hover {
+            background-color: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        .option-input:checked + .option-label {
+            background-color: #63b3ed;
+            color: white;
+            border-color: #4299e1;
+            box-shadow: 0 4px 6px rgba(66, 153, 225, 0.3);
+        }
+        .option-input {
+            display: none;
+        }
+        .button {
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover:enabled {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .quiz-check-button {
+            background-color: #dc2626;
+            color: white;
+        }
+        .quiz-check-button:hover:enabled {
+            background-color: #b91c1c;
+        }
+        .lesson-nav-button {
+            background-color: #48bb78;
+            color: white;
+        }
+        .lesson-nav-button:hover:enabled {
+            background-color: #38a169;
+        }
+        .feedback-message {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .feedback-correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback-incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .final-message {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .restart-button {
+            background-color: #f6ad55;
+            color: white;
+            margin-top: 1rem;
+        }
+        .restart-button:hover:enabled {
+            background-color: #ed8936;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-6">Bài Giảng Tương Tác: Chiến Lược IELTS Speaking</h1>
+
+        <div id="lesson-slides">
+            <!-- Slide 1: Giới thiệu chung -->
+            <div id="slide-0" class="lesson-slide">
+                <h2 class="slide-title">Slide 1: Giới thiệu</h2>
+                <p class="slide-content">Chào mừng bạn đến với bài giảng về chiến lược làm bài thi **IELTS Speaking**. Đây là bài thi quan trọng nhất để thể hiện khả năng giao tiếp của bạn.</p>
+                <p class="slide-content">Bài giảng này sẽ giúp bạn hiểu rõ cấu trúc bài thi, các tiêu chí chấm điểm và cách trả lời hiệu quả cho từng phần.</p>
+            </div>
+
+            <!-- Slide 2: Cấu trúc bài thi -->
+            <div id="slide-1" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 2: Cấu trúc IELTS Speaking</h2>
+                <p class="slide-content">Bài thi Speaking có 3 phần, tổng thời gian khoảng 11-14 phút.</p>
+                <ul class="list-decimal list-inside slide-content">
+                    <li>**Part 1 (4-5 phút):** Giới thiệu và phỏng vấn ngắn về các chủ đề quen thuộc (gia đình, sở thích, công việc...).</li>
+                    <li>**Part 2 (3-4 phút):** Trả lời về một chủ đề cụ thể (Cue Card) trong 1-2 phút sau 1 phút chuẩn bị.</li>
+                    <li>**Part 3 (4-5 phút):** Thảo luận sâu hơn về chủ đề ở Part 2, với các câu hỏi trừu tượng hơn.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 3: Tiêu chí chấm bài -->
+            <div id="slide-2" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 3: Tiêu chí chấm bài (Marking Criteria)</h2>
+                <p class="slide-content">Điểm của bạn sẽ dựa trên 4 tiêu chí, mỗi tiêu chí chiếm 25%:</p>
+                <ul class="list-decimal list-inside slide-content">
+                    <li>**Fluency and Coherence:** Nói trôi chảy và mạch lạc, có sử dụng các từ nối.</li>
+                    <li>**Lexical Resource:** Sử dụng từ vựng đa dạng, chính xác và tự nhiên.</li>
+                    <li>**Grammatical Range and Accuracy:** Sử dụng đa dạng cấu trúc ngữ pháp và hạn chế lỗi sai.</li>
+                    <li>**Pronunciation:** Phát âm rõ ràng, chuẩn và sử dụng ngữ điệu tự nhiên.</li>
+                </ul>
+            </div>
+            
+            <!-- Slide 4: Chiến lược Part 1 -->
+            <div id="slide-3" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 4: Chiến lược Part 1</h2>
+                <p class="slide-content">**Mục tiêu:** Trả lời một cách tự nhiên, tự tin, không quá ngắn cũng không quá dài.</p>
+                <ul class="list-disc list-inside slide-content">
+                    <li>**Mở rộng câu trả lời:** Đừng chỉ trả lời "Yes" hoặc "No". Hãy luôn giải thích thêm bằng cách sử dụng cấu trúc **"Answer - Reason - Example"** (Trả lời - Lý do - Ví dụ).</li>
+                    <li>**Tự tin và thư giãn:** Đây là phần dễ nhất, hãy coi như một cuộc trò chuyện để làm quen với giám khảo.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 5: Luyện tập Part 1 -->
+            <div id="slide-4" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 5: Luyện tập Part 1</h2>
+                <p class="slide-content">**Câu hỏi:** "Do you work or are you a student?"</p>
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu trả lời nào tốt nhất?</p>
+                    <div id="quiz-1-options" class="mb-4">
+                        <input type="radio" name="quiz1" id="q1o1" value="A" class="option-input"><label for="q1o1" class="option-label">A. I am a student.</label>
+                        <input type="radio" name="quiz1" id="q1o2" value="B" class="option-input"><label for="q1o2" class="option-label">B. I am a student. I am studying finance at a university in Hanoi.</label>
+                        <input type="radio" name="quiz1" id="q1o3" value="C" class="option-input"><label for="q1o3" class="option-label">C. I am a student, and I am studying finance at a university in Hanoi because I am interested in money.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="1" data-answer="B">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-1"></div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Giải thích Part 1 -->
+            <div id="slide-5" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 6: Giải thích</h2>
+                <p class="slide-content">**Đáp án đúng là B.** Câu trả lời này đủ dài, cung cấp thông tin cần thiết mà không đi quá sâu. Câu A quá ngắn, còn câu C hơi dài và lặp từ. </p>
+            </div>
+            
+            <!-- Slide 7: Chiến lược Part 2 -->
+            <div id="slide-6" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 7: Chiến lược Part 2</h2>
+                <p class="slide-content">**Mục tiêu:** Nói một mạch trong 1-2 phút. Tận dụng 1 phút chuẩn bị thật hiệu quả.</p>
+                <ul class="list-disc list-inside slide-content">
+                    <li>**Sử dụng 1 phút chuẩn bị:** Ghi lại các từ khóa và ý tưởng, đừng viết cả câu. Sắp xếp ý theo cấu trúc: **Introduction - Body - Conclusion**.</li>
+                    <li>**Mở rộng các ý:** Sau khi nói về một ý (ví dụ: "ai đó"), hãy tự hỏi "khi nào?", "ở đâu?", "tại sao?" để mở rộng câu.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 8: Luyện tập Part 2 -->
+            <div id="slide-7" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 8: Luyện tập Part 2</h2>
+                <p class="slide-content">**Đề bài:** "Describe a teacher who has had a positive influence on you."</p>
+                <p class="slide-content">**Cấu trúc nào tốt nhất cho 1 phút chuẩn bị?**</p>
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <div id="quiz-2-options" class="mb-4">
+                        <input type="radio" name="quiz2" id="q2o1" value="A" class="option-input"><label for="q2o1" class="option-label">A. Viết toàn bộ câu trả lời, từ đầu đến cuối.</label>
+                        <input type="radio" name="quiz2" id="q2o2" value="B" class="option-input"><label for="q2o2" class="option-label">B. Ghi ra các từ khóa: "Mrs. Lan - high school - kind - patient - inspired me - changed my life."</label>
+                        <input type="radio" name="quiz2" id="q2o3" value="C" class="option-input"><label for="q2o3" class="option-label">C. Ghi ra các câu hỏi: "Who?", "What?", "When?", "Why?".</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="2" data-answer="B">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-2"></div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Giải thích Part 2 -->
+            <div id="slide-8" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 9: Giải thích</h2>
+                <p class="slide-content">**Đáp án đúng là B.**</p>
+                <p class="slide-content">Viết từ khóa là cách hiệu quả nhất để tận dụng 1 phút chuẩn bị. Nó giúp bạn có một "lộ trình" để nói, nhưng vẫn linh hoạt để thay đổi và thêm ý tưởng, thay vì bị cứng nhắc bởi một bài viết đã soạn sẵn.</p>
+            </div>
+            
+            <!-- Slide 10: Chiến lược Part 3 -->
+            <div id="slide-9" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 10: Chiến lược Part 3</h2>
+                <p class="slide-content">**Mục tiêu:** Thể hiện khả năng phân tích, so sánh, đối chiếu và đưa ra ý kiến cá nhân về các vấn đề xã hội.</p>
+                <ul class="list-disc list-inside slide-content">
+                    <li>**Cấu trúc câu trả lời:** Luôn bắt đầu bằng một câu trả lời trực tiếp, sau đó giải thích, đưa ví dụ và có thể so sánh với một khía cạnh khác.</li>
+                    <li>**Từ vựng học thuật:** Sử dụng các từ vựng và cấu trúc ngữ pháp phức tạp hơn để thể hiện trình độ ngôn ngữ.</li>
+                    <li>**Thảo luận hai chiều:** Cân nhắc cả ưu và nhược điểm hoặc các quan điểm đối lập.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 11: Luyện tập Part 3 -->
+            <div id="slide-10" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 11: Luyện tập Part 3</h2>
+                <p class="slide-content">**Câu hỏi:** "Do you think teachers should be friends with their students?"</p>
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu trả lời nào thể hiện một quan điểm sâu sắc hơn?</p>
+                    <div id="quiz-3-options" class="mb-4">
+                        <input type="radio" name="quiz3" id="q3o1" value="A" class="option-input"><label for="q3o1" class="option-label">A. Yes, I think it is important for teachers to be friends with their students.</label>
+                        <input type="radio" name="quiz3" id="q3o2" value="B" class="option-input"><label for="q3o2" class="option-label">B. I believe a friendly relationship can be beneficial. It helps students feel more comfortable to ask questions and learn from their teachers, which could lead to better academic results.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="3" data-answer="B">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-3"></div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Giải thích Part 3 -->
+            <div id="slide-11" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 12: Giải thích</h2>
+                <p class="slide-content">**Đáp án đúng là B.**</p>
+                <p class="slide-content">Câu B không chỉ đưa ra quan điểm mà còn giải thích lý do ("helps students feel more comfortable") và đưa ra hệ quả ("could lead to better academic results"), thể hiện khả năng phân tích vấn đề một cách sâu sắc hơn.</p>
+            </div>
+
+            <!-- Slide 13: Lỗi thường gặp -->
+            <div id="slide-12" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 13: Lỗi thường gặp</h2>
+                <p class="slide-content">Hãy tránh các lỗi sau để đạt điểm cao:</p>
+                <ul class="list-decimal list-inside slide-content">
+                    <li>**Dừng lại quá lâu:** Dừng lại quá nhiều sẽ ảnh hưởng đến tiêu chí Fluency. Hãy học cách dùng các "filler words" (từ đệm) một cách tự nhiên.</li>
+                    <li>**Học thuộc lòng:** Tránh học thuộc lòng câu trả lời vì sẽ khiến bạn thiếu tự nhiên và dễ bị lạc đề.</li>
+                    <li>**Lặp từ:** Sử dụng từ vựng đa dạng, paraphrase câu hỏi và tránh lặp lại các từ khóa.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 14: Cách xử lý khi không hiểu câu hỏi -->
+            <div id="slide-13" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 14: Khi không hiểu câu hỏi</h2>
+                <p class="slide-content">Nếu bạn không nghe rõ hoặc không hiểu câu hỏi, đừng hoảng sợ. Hãy sử dụng các cụm từ sau một cách lịch sự:</p>
+                <ul class="list-disc list-inside slide-content">
+                    <li>`Could you please repeat the question?`</li>
+                    <li>`I'm sorry, could you say that again?`</li>
+                    <li>`I'm not sure I understand the question. Could you rephrase it?`</li>
+                </ul>
+            </div>
+            
+            <!-- Slide 15: Luyện tập tổng hợp -->
+            <div id="slide-14" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 15: Luyện tập tổng hợp</h2>
+                <p class="slide-content">**Câu hỏi:** "What are the advantages of living in a big city?"</p>
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu trả lời nào tốt nhất?</p>
+                    <div id="quiz-4-options" class="mb-4">
+                        <input type="radio" name="quiz4" id="q4o1" value="A" class="option-input"><label for="q4o1" class="option-label">A. The advantages are jobs and good schools.</label>
+                        <input type="radio" name="quiz4" id="q4o2" value="B" class="option-input"><label for="q4o2" class="option-label">B. I think living in a big city has a lot of advantages. For example, there are many job opportunities and more educational options, like universities and training centers.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="4" data-answer="B">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-4"></div>
+                </div>
+            </div>
+            
+            <!-- Slide 16: Luyện tập tổng hợp 2 -->
+            <div id="slide-15" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 16: Luyện tập tổng hợp</h2>
+                <p class="slide-content">**Câu hỏi:** "Do you prefer to travel alone or with others?"</p>
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu trả lời nào có cấu trúc tốt?</p>
+                    <div id="quiz-5-options" class="mb-4">
+                        <input type="radio" name="quiz5" id="q5o1" value="A" class="option-input"><label for="q5o1" class="option-label">A. I like to travel with others, but traveling alone is also fun sometimes.</label>
+                        <input type="radio" name="quiz5" id="q5o2" value="B" class="option-input"><label for="q5o2" class="option-label">B. I prefer to travel with others. It's great to share new experiences with friends or family, for instance, when you try new food or visit a new place. However, traveling alone can also be rewarding as you have more freedom.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="5" data-answer="B">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-5"></div>
+                </div>
+            </div>
+            
+            <!-- Slide 17: Luyện tập tổng hợp 3 -->
+            <div id="slide-16" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 17: Luyện tập tổng hợp</h2>
+                <p class="slide-content">**Câu hỏi:** "What is your favorite kind of weather?"</p>
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu trả lời nào đủ dài và chi tiết?</p>
+                    <div id="quiz-6-options" class="mb-4">
+                        <input type="radio" name="quiz6" id="q6o1" value="A" class="option-input"><label for="q6o1" class="option-label">A. My favorite weather is sunny weather.</label>
+                        <input type="radio" name="quiz6" id="q6o2" value="B" class="option-input"><label for="q6o2" class="option-label">B. I really enjoy sunny weather because it allows me to do outdoor activities, such as going to the park or playing sports with my friends. The sun also makes me feel more energetic.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="6" data-answer="B">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-6"></div>
+                </div>
+            </div>
+            
+            <!-- Slide 18: Luyện tập tổng hợp 4 -->
+            <div id="slide-17" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 18: Luyện tập tổng hợp</h2>
+                <p class="slide-content">**Câu hỏi:** "What are the differences between an advertisement for a newspaper and one for the internet?"</p>
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu trả lời nào toàn diện hơn?</p>
+                    <div id="quiz-7-options" class="mb-4">
+                        <input type="radio" name="quiz7" id="q7o1" value="A" class="option-input"><label for="q7o1" class="option-label">A. They are different because one is online and the other is on paper.</label>
+                        <input type="radio" name="quiz7" id="q7o2" value="B" class="option-input"><label for="q7o2" class="option-label">B. There are many differences. An advertisement for a newspaper is static, whereas an online advertisement can be interactive and include videos or sound. Additionally, online ads can reach a much larger audience and be targeted to specific people.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="7" data-answer="B">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-7"></div>
+                </div>
+            </div>
+
+            <!-- Slide 19: Luyện tập tổng hợp 5 -->
+            <div id="slide-18" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 19: Luyện tập tổng hợp</h2>
+                <p class="slide-content">**Câu hỏi:** "Why is it important to learn a second language?"</p>
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu trả lời nào có từ vựng tốt hơn?</p>
+                    <div id="quiz-8-options" class="mb-4">
+                        <input type="radio" name="quiz8" id="q8o1" value="A" class="option-input"><label for="q8o1" class="option-label">A. I think it is good to learn another language because you can talk to more people and get a better job.</label>
+                        <input type="radio" name="quiz8" id="q8o2" value="B" class="option-input"><label for="q8o2" class="option-label">B. I believe that learning a second language offers numerous advantages. It not only enhances communication skills but can also lead to better career prospects in our increasingly globalized world.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="8" data-answer="B">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-8"></div>
+                </div>
+            </div>
+
+            <!-- Slide 20: Tổng kết -->
+            <div id="slide-19" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 20: Tổng kết</h2>
+                <p class="final-message">🎉 Chúc mừng! Bạn đã hoàn thành bài giảng về IELTS Speaking.</p>
+                <p class="slide-content">Hãy nhớ áp dụng các chiến lược đã học vào việc luyện tập hàng ngày để đạt kết quả tốt nhất!</p>
+                <button id="restart-lesson-button" class="button restart-button w-full mt-8">Học Lại Bài Giảng</button>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center mt-8">
+            <button id="prev-slide-button" class="button lesson-nav-button" disabled>Slide Trước</button>
+            <span id="slide-indicator" class="text-lg font-semibold text-gray-700">Slide 1 / 20</span>
+            <button id="next-slide-button" class="button lesson-nav-button">Slide Tiếp Theo</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.lesson-slide');
+        const prevButton = document.getElementById('prev-slide-button');
+        const nextButton = document.getElementById('next-slide-button');
+        const slideIndicator = document.getElementById('slide-indicator');
+        const restartLessonButton = document.getElementById('restart-lesson-button');
+        const totalLessonSlides = slides.length - 1;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.add('hidden');
+                if (i === index) {
+                    slide.classList.remove('hidden');
+                }
+            });
+
+            prevButton.disabled = (index === 0);
+            
+            if (index < totalLessonSlides) {
+                nextButton.classList.remove('hidden');
+            } else {
+                nextButton.classList.add('hidden');
+            }
+
+            if (index < totalLessonSlides) {
+                slideIndicator.textContent = `Slide ${index + 1} / ${totalLessonSlides}`;
+            } else {
+                slideIndicator.textContent = `Hoàn thành!`;
+            }
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                showSlide(currentSlideIndex);
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentSlideIndex < totalLessonSlides) {
+                currentSlideIndex++;
+                showSlide(currentSlideIndex);
+            }
+        });
+
+        restartLessonButton.addEventListener('click', () => {
+            currentSlideIndex = 0;
+            showSlide(currentSlideIndex);
+            document.querySelectorAll('.interactive-section input').forEach(input => {
+                input.disabled = false;
+                input.checked = false;
+            });
+            document.querySelectorAll('.feedback-message').forEach(feedback => {
+                feedback.classList.add('hidden');
+                feedback.textContent = '';
+                feedback.classList.remove('feedback-correct', 'feedback-incorrect');
+            });
+            document.querySelectorAll('.quiz-check-button').forEach(button => {
+                button.disabled = true;
+                button.classList.remove('hidden');
+            });
+        });
+
+        document.querySelectorAll('.quiz-check-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const quizId = e.target.dataset.quizId;
+                const correctAnswer = e.target.dataset.answer;
+                const feedbackDiv = document.getElementById(`feedback-${quizId}`);
+                const selectedOption = document.querySelector(`input[name="quiz${quizId}"]:checked`);
+                
+                feedbackDiv.classList.remove('hidden', 'feedback-correct', 'feedback-incorrect');
+                
+                if (selectedOption && selectedOption.value === correctAnswer) {
+                    feedbackDiv.classList.add('feedback-correct');
+                    feedbackDiv.textContent = 'Chính xác! 🎉';
+                    
+                    e.target.disabled = true;
+                    setTimeout(() => {
+                        currentSlideIndex++;
+                        showSlide(currentSlideIndex);
+                    }, 1500);
+                } else {
+                    feedbackDiv.classList.add('feedback-incorrect');
+                    feedbackDiv.textContent = 'Chưa đúng, hãy thử lại!';
+                }
+            });
+        });
+
+        document.querySelectorAll('.interactive-section input[type="radio"]').forEach(input => {
+            input.addEventListener('change', (e) => {
+                const quizId = e.target.name.replace('quiz', '');
+                const checkButton = document.querySelector(`.quiz-check-button[data-quiz-id="${quizId}"]`);
+                if (checkButton) {
+                    checkButton.disabled = false;
+                }
+            });
+        });
+
+        document.querySelectorAll('.quiz-check-button').forEach(button => {
+            button.disabled = true;
+        });
+
+        showSlide(currentSlideIndex);
+    </script>
+</body>
+</html>
